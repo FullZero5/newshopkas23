@@ -1,6 +1,24 @@
+const {
+  NODE_ENV,
+  ANALYZE,
+  FB_DATABASE_URL,
+  FB_PROJECT_ID,
+  FB_API_KEY,
+  FB_AUTH_DOMAIN,
+  FB_STORAGE_BUCKET,
+  FB_MESSAGE_SENDER_ID,
+  GA_ID
+} = process.env
+
 const modules = [
   '@nuxtjs/pwa'
 ]
+const isNotProdEnv = NODE_ENV !== 'production'
+modules.push(
+  isNotProdEnv
+    ? '@nuxtjs/dotenv'
+    : ['@nuxtjs/google-analytics', { id: GA_ID }]
+)
 
 module.exports = {
   /*
@@ -42,10 +60,16 @@ module.exports = {
   /*
   ** Modules
   */
-  modules,
+  modules: ['@nuxtjs/dotenv'],
   plugins: [
     '~plugins/firebase'
   ],
   env: {
+    FB_DATABASE_URL,
+    FB_PROJECT_ID,
+    FB_API_KEY,
+    FB_AUTH_DOMAIN,
+    FB_STORAGE_BUCKET,
+    FB_MESSAGE_SENDER_ID
   }
 }
