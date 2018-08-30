@@ -11,10 +11,14 @@
         h2.subtitle.is-4 без ФН
         .content
           p {{item.description}}
+          hr
           p.is-size-6 <strong>Цена :</strong> {{ item.price }} ₽
           br
           p.has-text-centered
-            a.button.is-medium.is-info.is-outlined(@click="addItem(item)", aria-label="Купить") Купить
+            button.button.is-medium.is-warning(@click="addItem(item)", aria-label="Купить")
+              span.icon
+                i.fa.fa-shopping-cart
+              span Купить
 </template>
 
 <script>
