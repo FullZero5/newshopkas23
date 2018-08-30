@@ -13,6 +13,10 @@ module.exports = {
           customProperties: false
         }
       })
+    ],
+    vendor: [
+      'firebase/app',
+      'firebase/database'
     ]
   },
   /*
@@ -40,7 +44,7 @@ module.exports = {
   */
   modules,
   plugins: [
-    
+    '~plugins/firebase'
   ],
   env: {
   }
