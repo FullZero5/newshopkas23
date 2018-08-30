@@ -62,7 +62,8 @@ module.exports = {
   */
   modules: ['@nuxtjs/dotenv'],
   plugins: [
-    '~plugins/firebase'
+    '~plugins/firebase',
+    { src: '~plugins/lazysizes', ssr: false }
   ],
   env: {
     FB_DATABASE_URL,
