@@ -1,8 +1,8 @@
 export default {
-  apiKey: 'AIzaSyARYZku4kgfdWI4uggJf86uSk9WPHdIlkw',
-  authDomain: 'kas23-757ee.firebaseapp.com',
-  databaseURL: 'https://kas23-757ee.firebaseio.com',
-  projectId: 'kas23-757ee',
-  storageBucket: 'kas23-757ee.appspot.com',
-  messagingSenderId: '498268488236'
+  apiKey: process.env.FB_API_KEY,
+  authDomain: process.env.FB_AUTH_DOMAIN,
+  databaseURL: process.env.FB_DATABASE_URL,
+  projectId: process.env.FB_PROJECT_ID,
+  storageBucket: process.env.FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.FB_MESSAGE_SENDER_ID
 }
