@@ -33,7 +33,6 @@ import CartProductListItem from '@/components/CartProductListItem'
 const { mapGetters, mapActions } = createNamespacedHelpers('cart')
 
 export default {
-  
   components: {
     CartProductListItem
   },

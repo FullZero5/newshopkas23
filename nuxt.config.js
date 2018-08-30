@@ -1,6 +1,5 @@
 const {
   NODE_ENV,
-  ANALYZE,
   FB_DATABASE_URL,
   FB_PROJECT_ID,
   FB_API_KEY,
