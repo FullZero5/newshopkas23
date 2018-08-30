@@ -2,17 +2,32 @@
   .container
     .section
       app-hero
+    .section.capsule.is-clearfix
+  
+      transition-group.content.is-pulled-right(name="items", tag="div")
+        app-product-list-item(v-for="product in products",
+                              :key="product['.key']",
+                              :item="product")
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
 import Hero from '@/components/Hero'
+import ProductListItem from '@/components/ProductListItem'
+
+const { mapGetters } = createNamespacedHelpers('product')
 
 export default {
   components: {
-    AppHero: Hero
+    AppHero: Hero,
+    AppProductListItem: ProductListItem
   },
-  computed: { },
-  created () { }
+  computed: {
+    ...mapGetters(['products'])
+  },
+  created () {
+    this.$store.dispatch('product/setProductsRef')
+  }
 }
 </script>
 
