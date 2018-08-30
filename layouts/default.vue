@@ -7,9 +7,7 @@
     .hero-footer
       .container.has-text-centered
         p <strong>ООО "Маяк Кубани", </strong>
-          a(target="_blank",
-                                href="https://goo.gl/maps/MBEoU5R1eAm",
-                                rel="noopener") 350075  г. Краснодар, ул. Стасова, 179
+          a(target="_blank", href="https://goo.gl/maps/MBEoU5R1eAm", rel="noopener") 350075  г. Краснодар, ул. Стасова, 179
     </nav>
 </template>
 
