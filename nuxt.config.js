@@ -1,24 +1,6 @@
-const {
-  NODE_ENV,
-  ANALYZE,
-  FB_DATABASE_URL,
-  FB_PROJECT_ID,
-  FB_API_KEY,
-  FB_AUTH_DOMAIN,
-  FB_STORAGE_BUCKET,
-  FB_MESSAGE_SENDER_ID,
-  GA_ID
-} = process.env
-
 const modules = [
   '@nuxtjs/pwa'
 ]
-const isNotProdEnv = NODE_ENV !== 'production'
-modules.push(
-  isNotProdEnv
-    ? '@nuxtjs/dotenv'
-    : ['@nuxtjs/google-analytics', { id: GA_ID }]
-)
 
 module.exports = {
   /*
@@ -31,11 +13,6 @@ module.exports = {
           customProperties: false
         }
       })
-    ],
-    analyze: ANALYZE,
-    vendor: [
-      'firebase/app',
-      'firebase/database'
     ]
   },
   /*
@@ -43,7 +20,7 @@ module.exports = {
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
   head: {
-    titleTemplate: '%s - Маяк Кубани онлайн кассы под ключ'
+    title: 'Маяк Кубани онлайн кассы под ключ'
   },
   /*
   ** Customize the progress-bar color
@@ -63,17 +40,8 @@ module.exports = {
   */
   modules,
   plugins: [
-    '~plugins/firebase',
-    { src: '~plugins/veeValidate', ssr: false },
-    { src: '~plugins/lazysizes', ssr: false },
-    { src: '~plugins/localStorage.js', ssr: false }
+    
   ],
   env: {
-    FB_DATABASE_URL,
-    FB_PROJECT_ID,
-    FB_API_KEY,
-    FB_AUTH_DOMAIN,
-    FB_STORAGE_BUCKET,
-    FB_MESSAGE_SENDER_ID
   }
 }
