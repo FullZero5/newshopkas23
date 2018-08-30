@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex'
+
+const { mapGetters } = createNamespacedHelpers('cart')
 
 export default {
   name: 'AppHeader',
@@ -46,6 +49,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['total']),
     isIndexRoute() {
       return this.$route.name === 'index'
     }
