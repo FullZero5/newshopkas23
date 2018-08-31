@@ -3,7 +3,7 @@
     .section
       app-hero
     .section.capsule.is-clearfix
-  
+      app-sidebar(:pricerange.sync="highprice")
       transition-group.content.is-pulled-right(name="items", tag="div")
         app-product-list-item(v-for="product in products",
                               :key="product['.key']",
@@ -14,16 +14,18 @@
 import { createNamespacedHelpers } from 'vuex'
 import Hero from '@/components/Hero'
 import ProductListItem from '@/components/ProductListItem'
+import Sidebar from '@/components/Sidebar'
 
 const { mapGetters } = createNamespacedHelpers('product')
 
 export default {
   components: {
     AppHero: Hero,
-    AppProductListItem: ProductListItem
+    AppProductListItem: ProductListItem,
+    AppSidebar: Sidebar
   },
   computed: {
-    ...mapGetters(['products'])
+    ...mapGetters(['products', 'highprice'])
   },
   created () {
     this.$store.dispatch('product/setProductsRef')
