@@ -8,7 +8,7 @@
 
       .column.is-6.is-offset-1
         h1.title.is-2 {{ item.name }}
-        h2.subtitle.is-4 без ФН
+        
         .content
           p {{item.description}}
           hr
