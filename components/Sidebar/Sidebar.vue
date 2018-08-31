@@ -23,7 +23,7 @@
             option(v-for="category in categories",
               :key="category",
               :selected="category === categorySelected",
-              :value="category") {{ category }}
+              :value="category") {{ category | usall}}
           .icon.is-small.is-left
             i.fas.fa-sitemap
     .sidearea.is-hidden-mobile
@@ -75,6 +75,9 @@ export default {
       min: 8000,
       max: 34000
     }
+  },
+  filters: {
+    usall: value => (value=='all')?'Все':`${value}`
   },
   methods: {
     ...mapActions(['updateHighprice', 'setCategory'])
