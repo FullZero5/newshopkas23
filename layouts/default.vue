@@ -6,6 +6,14 @@
       nuxt
     .hero-footer
       .container.has-text-centered
+        .columns
+          .column.is-3.is-offset-2
+            h2 Дополнительно
+          .column.is-3
+            h2 Написать
+          .column.is-4
+            h2 Новости
+          
         p <strong>ООО "Маяк Кубани", </strong>
           a(target="_blank", href="https://goo.gl/maps/MBEoU5R1eAm", rel="noopener") 350075  г. Краснодар, ул. Стасова, 179
     </nav>
