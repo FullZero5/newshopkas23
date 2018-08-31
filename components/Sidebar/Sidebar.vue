@@ -26,7 +26,7 @@
               :value="category") {{ category }}
           .icon.is-small.is-left
             i.fas.fa-sitemap
-    .sidearea
+    .sidearea.is-hidden-mobile
       h4.subtitle.is-5 Контакты
       a.button.is-light.is-marginless-mobile(
                                 href="callto:+78612312340",
