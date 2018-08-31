@@ -11,18 +11,29 @@ const getProductsByCategory = (products, category) =>
     category !== 'all'
       ? product.article === category
       : product)
+      
+const getProductsByType = (products, type) =>
+  products.filter(product =>
+    type !== 'all'
+      ? product.category === type
+      : product)
 
 export default {
   highprice: ({ highprice }) => highprice,
   showSale: ({ sale }) => sale,
   allProducts: ({ products }) => products,
-  products: ({ sale: showSale, products, highprice, categorySelected }) =>
-    getProductsByCategory(getProductsUnderHighPrice(products, showSale, highprice), categorySelected),
+  products: ({ sale: showSale, products, highprice, categorySelected, typeProductSelected }) =>
+    getProductsByType(getProductsByCategory(getProductsUnderHighPrice(products, showSale, highprice), categorySelected), typeProductSelected),
 
   productFromSlugParamRoute: ({ products }) => paramSlug =>
     products.find(({ name }) => slug(name) === paramSlug),
 
   categories: ({ products }) =>
     ['all', ...new Set(products.map(({ article }) => article))].sort(),
-  categorySelected: ({ categorySelected }) => categorySelected
+    
+  typeProducts : ({ products }) => 
+    ['all', ...new Set(products.map(({ category }) => category))].sort(),
+    
+  categorySelected: ({ categorySelected }) => categorySelected,
+  typeProductSelected: ({ typeProductSelected }) => typeProductSelected
 }

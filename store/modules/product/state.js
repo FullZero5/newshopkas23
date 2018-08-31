@@ -2,5 +2,6 @@ export default {
   sale: false,
   products: [],
   highprice: 10000,
-  categorySelected: 'all'
+  categorySelected: 'all',
+  typeProductSelected: 'all'
 }

@@ -26,6 +26,17 @@
               :value="category") {{ category | usall}}
           .icon.is-small.is-left
             i.fas.fa-sitemap
+    .sidearea
+      label.subtitle.is-5(for="type") Тип
+      .control.has-icons-left
+        .select.is-medium
+          select#type(@input="setType($event.target.value)")
+            option(v-for="type in typeProducts",
+              :key="type",
+              :selected="type === typeProductSelected",
+              :value="type") {{ type | usall}}
+          .icon.is-small.is-left
+            i.fas.fa-sitemap
     .sidearea.is-hidden-mobile
       h4.subtitle.is-5 Контакты
       a.button.is-light.is-marginless-mobile(
@@ -80,10 +91,10 @@ export default {
     usall: value => (value=='all')?'Все':`${value}`
   },
   methods: {
-    ...mapActions(['updateHighprice', 'setCategory'])
+    ...mapActions(['updateHighprice', 'setCategory','setType'])
   },
   computed: {
-    ...mapGetters(['categories', 'categorySelected'])
+    ...mapGetters(['categories', 'categorySelected','typeProducts', 'typeProductSelected'])
   }
 }
 </script>

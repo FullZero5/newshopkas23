@@ -18,7 +18,6 @@
             button.button.is-large.is-warning.add(@click="addItem(item)", aria-label="Купить")
               span.icon.is-medium
                 i.fa.fa-shopping-cart
-            
 
 </template>
 
