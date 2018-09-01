@@ -10,7 +10,7 @@ export default {
     commit('SET_CATEGORY', value),
   setType: ({ commit }, value) =>
     commit('SET_TYPE', value),
-  setProductsRef: firebaseAction(({ bindFirebaseRef }) =>
-    bindFirebaseRef('products', db.ref('price'))
+  setProductsRef: firebaseAction(({ bindFirebaseRef }, value) =>
+    bindFirebaseRef('products', db.ref(value).orderByChild("article"))
   )
 }

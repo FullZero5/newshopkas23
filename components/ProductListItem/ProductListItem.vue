@@ -6,7 +6,7 @@
           source(:data-srcset="`${item.img}.webp`",
                  type="image/webp")
           img.lazyload(:data-srcset="`${item.img}.png`",
-                       :alt="`Image of ${item.name}`")
+                       :alt="`Фото of ${item.name}`")
     .card-content
       .media
         .media-content

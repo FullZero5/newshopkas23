@@ -3,17 +3,25 @@
     .section
       app-hero
     .section.capsule.is-clearfix
-      app-sidebar(:pricerange.sync="highprice")
-      transition-group.content.is-pulled-right(name="items", tag="div")
-        app-product-list-item(v-for="product in products",
-                              :key="product['.key']",
-                              :item="product")
+      //app-sidebar(:pricerange.sync="highprice")
+      table.table.is-fullwidth
+        thead
+            tr
+                th #
+                th Услуги
+                    span.is-hidden-mobile (описание) 
+                th Цена
+                th Действие
+        tbody
+          app-product-list-item(v-for="product in products",
+                                  :key="product['.key']",
+                                  :item="product")
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
-import Hero from '@/components/Hero'
-import ProductListItem from '@/components/ProductListItem'
+import Hero from '@/components/HeroUslugi'
+import ProductListItem from '@/components/UslugiTableItem'
 import Sidebar from '@/components/Sidebar'
 
 const { mapGetters } = createNamespacedHelpers('product')
@@ -28,7 +36,7 @@ export default {
     ...mapGetters(['products', 'highprice'])
   },
   created () {
-    this.$store.dispatch('product/setProductsRef','price')
+    this.$store.dispatch('product/setProductsRef','uslugi')
   }
 }
 </script>

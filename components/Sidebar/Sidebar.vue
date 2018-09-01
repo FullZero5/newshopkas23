@@ -16,17 +16,6 @@
       span.max.is-pulled-right {{ max }} ₽
     app-switch(v-if="!sale")
     .sidearea
-      label.subtitle.is-5(for="category") Товар/Услуга
-      .control.has-icons-left
-        .select.is-medium
-          select#category(@input="setCategory($event.target.value)")
-            option(v-for="category in categories",
-              :key="category",
-              :selected="category === categorySelected",
-              :value="category") {{ category | usall}}
-          .icon.is-small.is-left
-            i.fas.fa-sitemap
-    .sidearea
       label.subtitle.is-5(for="type") Тип
       .control.has-icons-left
         .select.is-medium
