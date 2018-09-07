@@ -13,7 +13,6 @@
             h2 Написать
           .column.is-4
             h2 Новости
-          
         p <strong>ООО "Маяк Кубани", </strong>
           a(target="_blank", href="https://goo.gl/maps/MBEoU5R1eAm", rel="noopener") 350075  г. Краснодар, ул. Стасова, 179
     </nav>
@@ -23,7 +22,9 @@
 import Header from '@/components/Header'
 
 export default {
-  components: { AppHeader: Header }
+  components: { 
+    AppHeader: Header
+  }
 }
 </script>
 

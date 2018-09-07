@@ -7,7 +7,7 @@
         a.navbar-item(href='/')
           img(src='/logo.png', alt='ООО Маяк Кубани', width='32', height='32')
           strong
-            i ООО "Маяк Кубани"
+            i Онлайн кассы
       .navbar-end.is-flex-touch
         .navbar-item
           .field
