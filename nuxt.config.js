@@ -9,16 +9,6 @@ const {
   GA_ID
 } = process.env
 
-// const modules = [
-//   '@nuxtjs/pwa'
-// ]
-// const isNotProdEnv = NODE_ENV !== 'production'
-// modules.push(
-//   isNotProdEnv
-//     ? '@nuxtjs/dotenv'
-//     : ['@nuxtjs/google-analytics', { id: GA_ID }]
-// )
-
 module.exports = {
   /*
   ** Build configuration
