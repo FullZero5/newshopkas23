@@ -9,15 +9,15 @@ const {
   GA_ID
 } = process.env
 
-const modules = [
-  '@nuxtjs/pwa'
-]
-const isNotProdEnv = NODE_ENV !== 'production'
-modules.push(
-  isNotProdEnv
-    ? '@nuxtjs/dotenv'
-    : ['@nuxtjs/google-analytics', { id: GA_ID }]
-)
+// const modules = [
+//   '@nuxtjs/pwa'
+// ]
+// const isNotProdEnv = NODE_ENV !== 'production'
+// modules.push(
+//   isNotProdEnv
+//     ? '@nuxtjs/dotenv'
+//     : ['@nuxtjs/google-analytics', { id: GA_ID }]
+// )
 
 module.exports = {
   /*
@@ -41,7 +41,7 @@ module.exports = {
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
   head: {
-    title: 'Маяк Кубани онлайн кассы под ключ'
+    title: 'Онлайн кассы под ключ, установка, гарантийный  и послегарантийный ремонт кассовых аппаратов'
   },
   /*
   ** Customize the progress-bar color
@@ -52,14 +52,17 @@ module.exports = {
   */
   manifest: {
     theme_color: '#f4a00d',
-    name: 'Продажа онлайн касс в Краснодаре',
+    name: 'Продажа онлайн касс',
     description: 'У нас Вы можете купить онлайн кассу под 54ФЗ и получить полный спектр услуг: ввод в эксплуатацию, гарантийный и пост гарантийный ремонт касс',
     lang: 'ru'
   },
   /*
   ** Modules
   */
-  modules: ['@nuxtjs/dotenv'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
+  ],
   plugins: [
     '~plugins/firebase',
     { src: '~plugins/lazysizes', ssr: false },
