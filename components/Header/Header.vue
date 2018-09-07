@@ -13,17 +13,17 @@
           .field
             p.control
               a.button.is-light.is-marginless-mobile(
-                                href="callto:+78612312340",
+                                href="callto:+79181269201",
                                 rel="noopener")
                 span.icon
                   i.fab.fa.fa-phone
-                span.is-hidden-mobile 8(861)231-23-40
+                span.is-hidden-mobile 8(918)126-92-01
               a.button.is-light.is-marginless-mobile.is-hidden-mobile(
-                                href="callto:+78612312664",
+                                href="callto:+79898006302",
                                 rel="noopener")
                 span.icon
                   i.fab.fa.fa-phone
-                span.is-hidden-mobile 8(861)231-26-64
+                span.is-hidden-mobile 8(989)800-63-02
         .navbar-item
           .field
             p.control
